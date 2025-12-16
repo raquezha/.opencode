@@ -12,15 +12,16 @@ Personal AI agent rules and slash commands for [OpenCode](https://opencode.ai).
 | Issues sit unanalyzed                | `/analyze-issue` creates specs    |
 | PRs lack good descriptions           | `/create-pr` writes them          |
 | Bugs recur without root cause        | `/five` digs to the why           |
+| Messy branches after task done       | `/cleanup` resets workspace       |
 
 ## Structure
 
 ```
 ~/.opencode/
 ├── AGENTS.md           # Global rules (stack, response format, boundaries)
-├── agents/
+├── agent/
 │   └── docs-agent.md   # Universal documentation agent
-├── commands/
+├── command/
 │   ├── status.md       # "What was I doing?"
 │   ├── commit.md       # Smart conventional commits
 │   ├── context.md      # "What is this project?"
@@ -28,7 +29,8 @@ Personal AI agent rules and slash commands for [OpenCode](https://opencode.ai).
 │   ├── create-pr.md    # PR with good description
 │   ├── fix-issue.md    # Full workflow: issue → PR
 │   ├── five.md         # 5 Whys root cause analysis
-│   └── check.md        # Run tests, lint, build
+│   ├── check.md        # Run tests, lint, build
+│   └── cleanup.md      # Reset workspace for new task
 ├── plugin/
 │   └── env-protection.js # Blocks reading .env, secrets, keys
 └── README.md
@@ -36,16 +38,17 @@ Personal AI agent rules and slash commands for [OpenCode](https://opencode.ai).
 
 ## Commands
 
-| Command            | Purpose                            |
-|--------------------|------------------------------------|
-| `/status`          | Show git state and recent work     |
+| Command            | Purpose                             |
+|--------------------|------------------------------------- |
+| `/status`          | Show git state and recent work      |
 | `/commit`          | Generate conventional commit + emoji|
-| `/context`         | Analyze project structure          |
-| `/analyze-issue`   | Turn issue into implementation spec|
-| `/create-pr`       | Create PR with good description    |
-| `/fix-issue`       | Full workflow: issue → PR          |
-| `/five`            | 5 Whys root cause analysis         |
-| `/check`           | Run tests, lint, build             |
+| `/context`         | Analyze project structure           |
+| `/analyze-issue`   | Turn issue into implementation spec |
+| `/create-pr`       | Create PR with good description     |
+| `/fix-issue`       | Full workflow: issue → PR           |
+| `/five`            | 5 Whys root cause analysis          |
+| `/check`           | Run tests, lint, build              |
+| `/cleanup`         | Reset workspace, prune branches     |
 
 ## Agents
 
