@@ -29,6 +29,8 @@ Personal AI agent rules and slash commands for [OpenCode](https://opencode.ai).
 │   ├── fix-issue.md    # Full workflow: issue → PR
 │   ├── five.md         # 5 Whys root cause analysis
 │   └── check.md        # Run tests, lint, build
+├── plugin/
+│   └── env-protection.js # Blocks reading .env, secrets, keys
 └── README.md
 ```
 
@@ -50,6 +52,28 @@ Personal AI agent rules and slash commands for [OpenCode](https://opencode.ai).
 | Agent        | Purpose                                 |
 |--------------|-----------------------------------------|
 | `docs-agent` | Document anything: code, processes, notes|
+
+## Plugins
+
+| Plugin           | Purpose                                      |
+|------------------|----------------------------------------------|
+| `env-protection` | Blocks reading `.env`, credentials, keys     |
+
+### Blocked Patterns
+
+The env-protection plugin prevents reading files matching:
+
+| Pattern       | Examples                          |
+|---------------|-----------------------------------|
+| `.env`        | `.env`, `.env.local`, `.env.prod` |
+| `credentials` | `credentials.json`                |
+| `.pem`        | `private.pem`, `cert.pem`         |
+| `.key`        | `server.key`, `api.key`           |
+| `id_rsa`      | `~/.ssh/id_rsa`                   |
+| `id_ed25519`  | `~/.ssh/id_ed25519`               |
+| `.p12`        | `certificate.p12`                 |
+| `.pfx`        | `certificate.pfx`                 |
+| `secret`      | `secret.yaml`, `mysecret.json`    |
 
 ## Design Principles
 
