@@ -2,6 +2,8 @@
 
 **5 Whys Analysis** - Root cause analysis for problems.
 
+Based on [5 Whys technique](https://en.wikipedia.org/wiki/Five_whys).
+
 ## Usage
 ```
 /five <problem description>

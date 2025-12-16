@@ -2,6 +2,8 @@
 
 **Smart commits** - Stage, generate message, commit.
 
+Based on [Conventional Commits](https://www.conventionalcommits.org/).
+
 ## What It Does
 1. Show current changes (`git status`)
 2. Analyze what changed

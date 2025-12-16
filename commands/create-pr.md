@@ -47,7 +47,7 @@ feat(settings): add dark mode toggle
 ## Testing
 - [x] Manual toggle works
 - [x] Preference persists across restart
-- [ ] Automated UI test (TODO)
+- [x] Unit tests added
 
 ## Result
 ✅ PR created: https://github.com/user/repo/pull/45
