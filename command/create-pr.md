@@ -60,7 +60,21 @@ feat(settings): add dark mode toggle
 | `git diff main..HEAD --stat`             | Files changed        |
 | `gh pr create --title "x" --body "y"`    | Create PR            |
 
+## Self-Critique (Before Creating PR)
+
+Before running `gh pr create`, verify:
+
+| Check                  | Question                                    |
+|------------------------|---------------------------------------------|
+| All commits included?  | Did I review ALL commits, not just latest?  |
+| Description complete?  | Summary, changes, testing status included?  |
+| Single purpose?        | Does PR do one thing well?                  |
+| Breaking changes noted?| Any API/behavior changes documented?        |
+| Confidence level?      | Rate 1-5, flag < 3 for human review         |
+
+If any check fails, address before creating PR.
+
 ## Boundaries
-- ✅ **Always:** Summarize all commits (not just latest), include testing status
+- ✅ **Always:** Summarize all commits (not just latest), include testing status, self-critique
 - ⚠️ **Ask first:** If PR spans multiple features, suggest splitting
 - 🚫 **Never:** Create PR with incomplete description, merge automatically

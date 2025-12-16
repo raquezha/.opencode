@@ -40,6 +40,26 @@ Format: `type(scope): description`
 - Lowercase, imperative mood
 - Max 72 chars for subject line
 
+## Self-Critique (Reflexion Pattern)
+
+Before finalizing significant outputs (commits, PRs, implementations), pause and ask:
+
+| Question                        | Purpose                              |
+|---------------------------------|--------------------------------------|
+| What's missing?                 | Catch incomplete work                |
+| What's superfluous?             | Remove unnecessary additions         |
+| Any errors or wrong assumptions?| Validate logic and understanding     |
+| Confidence level? (1-5)         | Flag uncertainty for human review    |
+
+When to apply:
+- ✅ Commits with 3+ files changed
+- ✅ PR descriptions
+- ✅ Implementation plans
+- ✅ Architecture decisions
+- ❌ Simple file reads, minor edits
+
+Source: [Reflexion pattern](https://arxiv.org/abs/2303.11366) - self-reflection improves agent accuracy.
+
 ## Boundaries
 | Level      | Rules                                                                 |
 |------------|-----------------------------------------------------------------------|

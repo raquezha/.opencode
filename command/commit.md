@@ -58,7 +58,20 @@ state handling in LoginViewModel.
 | `git add <files>`                  | Stage files        |
 | `git commit -m "<msg>"`            | Create commit      |
 
+## Self-Critique (Before Commit)
+
+For commits with 3+ files, verify:
+
+| Check                  | Question                                    |
+|------------------------|---------------------------------------------|
+| Complete?              | Are all related changes included?           |
+| Minimal?               | Any unrelated changes to exclude?           |
+| Message accurate?      | Does message reflect actual changes?        |
+| Secrets safe?          | No `.env`, credentials, or keys staged?     |
+
+If any check fails, fix before committing.
+
 ## Boundaries
-- ✅ **Always:** Show changes before committing, use conventional format
+- ✅ **Always:** Show changes before committing, use conventional format, self-critique 3+ files
 - ⚠️ **Ask first:** If changes span multiple unrelated features
 - 🚫 **Never:** Commit secrets, commit unrelated files, push automatically

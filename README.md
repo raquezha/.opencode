@@ -30,7 +30,8 @@ Personal AI agent rules and slash commands for [OpenCode](https://opencode.ai).
 │   ├── fix-issue.md       # Full workflow: issue → PR
 │   ├── five.md            # 5 Whys root cause analysis
 │   ├── check.md           # Run tests, lint, build
-│   └── cleanup.md         # Reset workspace for new task
+│   ├── cleanup.md         # Reset workspace for new task
+│   └── reflect.md         # Self-critique before finalizing
 ├── plugin/
 │   └── env-protection.js  # Blocks reading .env, secrets, keys
 └── README.md
@@ -49,6 +50,7 @@ Personal AI agent rules and slash commands for [OpenCode](https://opencode.ai).
 | `/five`          | 5 Whys root cause analysis           |
 | `/check`         | Run tests, lint, build               |
 | `/cleanup`       | Reset workspace, prune branches      |
+| `/reflect`       | Self-critique before finalizing work |
 
 ## Agents
 
@@ -89,6 +91,7 @@ Based on [GitHub's analysis of 2,500+ agent files](https://github.blog/ai-and-ml
 | Specific stack   | Kotlin, Android, KMP, Ktor in AGENTS.md             |
 | Code examples    | Commands show example output                        |
 | Cover 6 areas    | Commands, testing, structure, style, git, boundaries|
+| Self-critique    | Reflexion pattern before finalizing work            |
 
 ## Response Format
 
@@ -157,3 +160,4 @@ cd ~/.config/opencode && git pull
 - [How to write a great agents.md](https://github.blog/ai-and-ml/github-copilot/how-to-write-a-great-agents-md-lessons-from-over-2500-repositories/) - GitHub Blog
 - [Conventional Commits](https://www.conventionalcommits.org/)
 - [5 Whys Technique](https://en.wikipedia.org/wiki/Five_whys)
+- [Reflexion Pattern](https://arxiv.org/abs/2303.11366) - Self-reflection improves agent accuracy
