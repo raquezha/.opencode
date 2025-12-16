@@ -43,7 +43,7 @@ Personal AI agent rules and slash commands for [OpenCode](https://opencode.ai).
 | `/catchup`       | Show git state and recent work       |
 | `/commit`        | Generate conventional commit + emoji |
 | `/context`       | Analyze project structure            |
-| `/analyze-issue` | Turn issue into implementation spec  |
+| `/analyze-issue` | Turn issue into spec (GitHub/GitLab/Jira) |
 | `/create-pr`     | Create PR with good description      |
 | `/fix-issue`     | Full workflow: issue → PR            |
 | `/five`          | 5 Whys root cause analysis           |
@@ -100,6 +100,26 @@ All agents follow:
 | Tables aligned    | Properly formatted markdown tables      |
 | Bullets for lists | Complex info in bullets/numbered lists  |
 | Cite sources      | Reference files, docs, or past decisions|
+
+## CLI Dependencies
+
+Some commands require platform-specific CLI tools. Install as needed:
+
+| Platform | CLI Tool | Install                 | Auth              |
+|----------|----------|-------------------------|-------------------|
+| GitHub   | `gh`     | `brew install gh`       | `gh auth login`   |
+| GitLab   | `glab`   | `brew install glab`     | `glab auth login` |
+| Jira     | `jira`   | `brew install jira-cli` | `jira init`       |
+
+### Commands Requiring CLIs
+
+| Command          | GitHub (`gh`) | GitLab (`glab`) | Jira (`jira`) |
+|------------------|:-------------:|:---------------:|:-------------:|
+| `/analyze-issue` | ✓             | ✓               | ✓             |
+| `/fix-issue`     | ✓             | ✓               | ✓             |
+| `/create-pr`     | ✓             | ✓               | -             |
+
+If a required CLI is missing, the command will fail gracefully with installation instructions.
 
 ## Setup
 

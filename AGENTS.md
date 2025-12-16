@@ -22,7 +22,27 @@ Kotlin, Android, KMP, Ktor, CLI scripts, YAML, Docker, n8n
 | Follow existing patterns | Match project's current style         |
 | Error handling required  | Always handle errors                  |
 
+## Commit Messages
+Use [Conventional Commits](https://www.conventionalcommits.org/) format:
+
+| Type       | When to Use                        |
+|------------|----------------------------------- |
+| `feat`     | New feature                        |
+| `fix`      | Bug fix                            |
+| `docs`     | Documentation only                 |
+| `style`    | Formatting, no code change         |
+| `refactor` | Code change, no feature/fix        |
+| `test`     | Adding/updating tests              |
+| `chore`    | Build, deps, configs               |
+
+Format: `type(scope): description`
+- No emoji in commit messages
+- Lowercase, imperative mood
+- Max 72 chars for subject line
+
 ## Boundaries
-- ✅ **Always:** TLDR at top, aligned tables, plan before act, follow existing patterns
-- ⚠️ **Ask first:** Architecture changes, new dependencies, breaking changes
-- 🚫 **Never:** Commit secrets (`.env`, `.pem`, `.key`), leave placeholders/TODOs, push to main directly
+| Level      | Rules                                                                 |
+|------------|-----------------------------------------------------------------------|
+| Always     | TLDR at top, aligned tables, plan before act, follow existing patterns|
+| Ask first  | Architecture changes, new dependencies, breaking changes              |
+| Never      | Commit secrets, leave placeholders/TODOs, push to main directly       |
