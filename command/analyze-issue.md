@@ -88,7 +88,18 @@ After installing, run `/analyze-issue` again.
 
 **Do not proceed with issue analysis if CLI is missing.**
 
-### Step 3: Fetch Issue Details
+### Step 3: Extract Issue ID from Input
+
+**For URLs:** Extract the issue number/key from the URL path:
+- GitLab: `.../-/issues/24` → issue number is `24`
+- GitHub: `.../issues/123` → issue number is `123`
+- Jira: `.../browse/PROJ-789` → issue key is `PROJ-789`
+
+**For shorthand:** Use as-is:
+- `#123` → `123`
+- `PROJ-789` → `PROJ-789`
+
+### Step 4: Fetch Issue Details
 
 | Platform | Command                                        |
 |----------|------------------------------------------------|
@@ -96,7 +107,7 @@ After installing, run `/analyze-issue` again.
 | GitLab   | `glab issue view <num> --comments`             |
 | Jira     | `jira issue view <key> --comments`             |
 
-### Step 4: Analyze and Output
+### Step 5: Analyze and Output
 
 ## Output Format
 ```
