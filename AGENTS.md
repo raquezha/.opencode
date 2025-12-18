@@ -114,3 +114,35 @@ When to use gh_grep:
 - "How do others implement X?"
 - Finding real-world usage patterns
 - Looking for code examples
+
+## GitHub MCP (Official)
+
+GitHub's official MCP server for repository operations. Uses Docker.
+
+| Tool Pattern | Use Case                                      |
+|--------------|-----------------------------------------------|
+| `github_*`   | Issues, PRs, repos, actions, code search      |
+
+Available operations:
+- Repository management (files, branches, commits)
+- Issues and pull requests
+- GitHub Actions workflows
+- Code search and security scanning
+- Notifications and discussions
+
+Source: https://github.com/github/github-mcp-server
+
+## GitLab MCP
+
+GitLab MCP server for self-hosted GitLab instances.
+
+| Tool Pattern | Use Case                                      |
+|--------------|-----------------------------------------------|
+| `gitlab_*`   | Issues, MRs, repos on GitLab                  |
+
+Available operations:
+- Repository management
+- Issues and merge requests
+- Project pipelines
+
+Source: https://github.com/zereight/gitlab-mcp

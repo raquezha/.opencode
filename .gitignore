@@ -2,3 +2,10 @@ node_modules
 package.json
 bun.lock
 bin/
+
+# Secrets directory (API keys, tokens - never commit)
+.secrets/
+
+# Environment files
+.env
+.env.*

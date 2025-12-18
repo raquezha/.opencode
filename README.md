@@ -20,6 +20,7 @@ Personal AI agent rules and slash commands for [OpenCode](https://opencode.ai).
 ~/.config/opencode/
 ├── AGENTS.md              # Global rules (stack, response format, boundaries)
 ├── agent/
+│   ├── critic.md          # Sub-agent for code review
 │   ├── documentator.md    # Sub-agent for documentation tasks
 │   └── researcher.md      # Sub-agent for research/search tasks
 ├── command/
@@ -35,6 +36,9 @@ Personal AI agent rules and slash commands for [OpenCode](https://opencode.ai).
 │   └── reflect.md         # Self-critique before finalizing
 ├── plugin/
 │   └── env-protection.js  # Blocks reading .env, secrets, keys
+├── .secrets/              # API keys, tokens (git-ignored)
+├── .secrets.template      # Documents required secrets
+├── setup-secrets.sh       # Interactive secrets setup
 └── README.md
 ```
 
@@ -55,18 +59,20 @@ Personal AI agent rules and slash commands for [OpenCode](https://opencode.ai).
 
 ## Agents (Sub-agents)
 
-Both agents are sub-agents optimized for token efficiency. They are delegated tasks from the main conversation.
+All agents are sub-agents optimized for token efficiency. They are delegated tasks from the main conversation.
 
-| Agent         | Purpose                                   | Key Tools                     |
-|---------------|-------------------------------------------|-------------------------------|
-| `documentator`| Write docs, READMEs, ADRs                 | write, edit, read, glob, grep |
-| `researcher`  | Web search, docs lookup, code examples    | brave_search, context7, gh_grep |
+| Agent         | Purpose                                   | Key Tools                                    |
+|---------------|-------------------------------------------|----------------------------------------------|
+| `critic`      | Code review, find issues, verify standards| read, glob, grep, bash, github*, gitlab*     |
+| `documentator`| Write docs, READMEs, ADRs                 | write, edit, read, glob, grep                |
+| `researcher`  | Web search, docs lookup, code examples    | brave_search*, context7*, gh_grep*           |
 
 ### Usage
 Delegate tasks to sub-agents from the main conversation:
 ```
 Use the researcher agent to find the latest Ktor version
 Use the documentator agent to create a README for this project
+Use the critic agent to review the code in src/main/kotlin
 ```
 
 ## Plugins
@@ -164,6 +170,46 @@ git clone git@github.com:raquezha/.opencode.git ~/.config/opencode
 ```bash
 cd ~/.config/opencode && git pull
 ```
+
+## Secrets Setup
+
+Secrets are stored locally in `.secrets/` (git-ignored). Run the setup script on each new machine:
+
+```bash
+cd ~/.config/opencode
+./setup-secrets.sh
+```
+
+### Required Secrets
+
+| Secret           | Purpose                | Get From                                  |
+|------------------|------------------------|-------------------------------------------|
+| `brave-api-key`  | Brave Search API       | https://brave.com/search/api/             |
+| `github-token`   | GitHub MCP server      | https://github.com/settings/tokens        |
+| `gitlab-token`   | GitLab MCP server      | Your GitLab instance                      |
+| `gitlab-api-url` | GitLab API endpoint    | Your GitLab instance (e.g., https://gitlab.example.com/api/v4) |
+
+### Manual Setup
+
+If you prefer manual setup:
+
+```bash
+mkdir -p .secrets && chmod 700 .secrets
+echo -n "your-api-key" > .secrets/brave-api-key
+echo -n "ghp_xxxx" > .secrets/github-token
+echo -n "glpat-xxxx" > .secrets/gitlab-token
+echo -n "https://gitlab.example.com/api/v4" > .secrets/gitlab-api-url
+chmod 600 .secrets/*
+```
+
+### Security Notes
+
+| Aspect              | Details                                           |
+|---------------------|---------------------------------------------------|
+| Git ignored         | `.secrets/` is in `.gitignore`, never committed   |
+| File permissions    | Files have 600, directory has 700                 |
+| Disk encryption     | Ensure FileVault (macOS) or equivalent is enabled |
+| Template            | See `.secrets.template` for required secrets      |
 
 ## Sources & References
 
