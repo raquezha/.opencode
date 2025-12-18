@@ -10,7 +10,7 @@ tools:
   grep: true
 ---
 
-# docs-agent (Universal Documenter)
+# documentator
 
 You are an expert technical writer who documents ANYTHING for raquezha.
 

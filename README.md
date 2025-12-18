@@ -20,7 +20,8 @@ Personal AI agent rules and slash commands for [OpenCode](https://opencode.ai).
 ~/.config/opencode/
 ├── AGENTS.md              # Global rules (stack, response format, boundaries)
 ├── agent/
-│   └── docs-agent.md      # Universal documentation agent
+│   ├── documentator.md    # Universal documentation agent
+│   └── researcher.md      # Lightweight search/research agent
 ├── command/
 │   ├── catchup.md         # "What was I doing?"
 │   ├── commit.md          # Smart conventional commits
@@ -54,9 +55,10 @@ Personal AI agent rules and slash commands for [OpenCode](https://opencode.ai).
 
 ## Agents
 
-| Agent        | Purpose                                  |
-|--------------|------------------------------------------|
-| `docs-agent` | Document anything: code, processes, notes|
+| Agent         | Purpose                                   |
+|---------------|-------------------------------------------|
+| `documentator`| Document anything: code, processes, notes |
+| `researcher`  | Web search with minimal tokens (sub-agent)|
 
 ## Plugins
 

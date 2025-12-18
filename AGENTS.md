@@ -89,3 +89,28 @@ When to use Brave Search:
 - Researching errors or troubleshooting
 - Finding current news or announcements
 - Any question requiring up-to-date web information
+
+## Documentation Lookup (Context7)
+Use `context7` tools to get up-to-date library documentation directly.
+
+| Tool                          | Use Case                              |
+|-------------------------------|---------------------------------------|
+| `context7_resolve-library-id` | Find library ID for docs lookup       |
+| `context7_get-library-docs`   | Get current library documentation     |
+
+When to use Context7:
+- Looking up Kotlin, Android, Ktor, Gradle, Compose docs
+- Need accurate, versioned documentation
+- Reducing hallucination on library APIs
+
+## Code Examples (Grep by Vercel)
+Use `gh_grep` to search real code examples from GitHub repositories.
+
+| Tool             | Use Case                                      |
+|------------------|-----------------------------------------------|
+| `gh_grep_search` | Search code patterns across GitHub repos      |
+
+When to use gh_grep:
+- "How do others implement X?"
+- Finding real-world usage patterns
+- Looking for code examples
