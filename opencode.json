@@ -25,5 +25,14 @@
       }
     }
   },
-  "plugin": ["opencode-skills"]
+  "plugin": ["opencode-skills"],
+  "mcp": {
+    "brave_search": {
+      "type": "local",
+      "command": ["npx", "-y", "@brave/brave-search-mcp-server"],
+      "environment": {
+        "BRAVE_API_KEY": "{file:~/.secrets/brave-api-key}"
+      }
+    }
+  }
 }

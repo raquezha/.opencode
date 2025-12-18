@@ -66,3 +66,26 @@ Source: [Reflexion pattern](https://arxiv.org/abs/2303.11366) - self-reflection 
 | Always     | TLDR at top, aligned tables, plan before act, follow existing patterns|
 | Ask first  | Architecture changes, new dependencies, breaking changes              |
 | Never      | Commit secrets, leave placeholders/TODOs, push to main directly       |
+
+## Web Search
+**Always use `brave_search` tools by default** for any web lookups. Do not use other web fetch methods unless Brave Search is unavailable or explicitly requested otherwise.
+
+**Priority order:**
+1. `brave_search` tools (primary - always try first)
+2. `webfetch` or other methods (fallback only if Brave fails)
+
+| Tool                  | Use Case                                      |
+|-----------------------|-----------------------------------------------|
+| `brave_web_search`    | General web search, documentation lookup      |
+| `brave_news_search`   | Current events, recent announcements          |
+| `brave_local_search`  | Local businesses, places (Pro plan)           |
+| `brave_image_search`  | Image search                                  |
+| `brave_video_search`  | Video tutorials, demos                        |
+| `brave_summarizer`    | AI summaries from search results (Pro plan)   |
+
+When to use Brave Search:
+- Looking up documentation or API references
+- Checking latest versions of libraries/frameworks
+- Researching errors or troubleshooting
+- Finding current news or announcements
+- Any question requiring up-to-date web information
