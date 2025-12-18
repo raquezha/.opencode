@@ -1,5 +1,6 @@
 ---
 description: Sub-agent for code review - analyzes code quality, finds issues
+mode: subagent
 tools:
   # Analysis tools
   read: true

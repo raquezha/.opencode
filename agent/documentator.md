@@ -1,5 +1,6 @@
 ---
 description: Sub-agent for documentation tasks - writes docs, READMEs, ADRs
+mode: subagent
 temperature: 0.3
 tools:
   # Core documentation tools

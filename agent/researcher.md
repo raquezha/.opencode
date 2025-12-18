@@ -1,5 +1,6 @@
 ---
 description: Sub-agent for research - web search, docs lookup, code examples
+mode: subagent
 tools:
   # Core research tools
   brave_search*: true
