@@ -20,8 +20,8 @@ Personal AI agent rules and slash commands for [OpenCode](https://opencode.ai).
 ~/.config/opencode/
 ├── AGENTS.md              # Global rules (stack, response format, boundaries)
 ├── agent/
-│   ├── documentator.md    # Universal documentation agent
-│   └── researcher.md      # Lightweight search/research agent
+│   ├── documentator.md    # Sub-agent for documentation tasks
+│   └── researcher.md      # Sub-agent for research/search tasks
 ├── command/
 │   ├── catchup.md         # "What was I doing?"
 │   ├── commit.md          # Smart conventional commits
@@ -53,12 +53,21 @@ Personal AI agent rules and slash commands for [OpenCode](https://opencode.ai).
 | `/cleanup`       | Reset workspace, prune branches      |
 | `/reflect`       | Self-critique before finalizing work |
 
-## Agents
+## Agents (Sub-agents)
 
-| Agent         | Purpose                                   |
-|---------------|-------------------------------------------|
-| `documentator`| Document anything: code, processes, notes |
-| `researcher`  | Web search with minimal tokens (sub-agent)|
+Both agents are sub-agents optimized for token efficiency. They are delegated tasks from the main conversation.
+
+| Agent         | Purpose                                   | Key Tools                     |
+|---------------|-------------------------------------------|-------------------------------|
+| `documentator`| Write docs, READMEs, ADRs                 | write, edit, read, glob, grep |
+| `researcher`  | Web search, docs lookup, code examples    | brave_search, context7, gh_grep |
+
+### Usage
+Delegate tasks to sub-agents from the main conversation:
+```
+Use the researcher agent to find the latest Ktor version
+Use the documentator agent to create a README for this project
+```
 
 ## Plugins
 
