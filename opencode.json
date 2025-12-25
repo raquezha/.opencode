@@ -56,6 +56,10 @@
         "GITLAB_PERSONAL_ACCESS_TOKEN": "{file:.secrets/gitlab-token}",
         "GITLAB_API_URL": "{file:.secrets/gitlab-api-url}"
       }
+    },
+    "gitlab_docs": {
+      "type": "local",
+      "command": ["npx", "-y", "gitlab-docs-mcp"]
     }
   }
 }

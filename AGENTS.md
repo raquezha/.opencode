@@ -146,3 +146,29 @@ Available operations:
 - Project pipelines
 
 Source: https://github.com/zereight/gitlab-mcp
+
+## GitLab Docs MCP
+
+GitLab documentation search and retrieval MCP server.
+
+| Tool                  | Use Case                                      |
+|-----------------------|-----------------------------------------------|
+| `searchGitLabDocs`    | Search across 2,494 GitLab documentation pages |
+| `getDocPage`          | Retrieve complete documentation page content  |
+| `listDocSections`     | Browse documentation structure                |
+
+Available sections:
+- `ci` - CI/CD pipelines, runners, caching, artifacts
+- `api` - REST API, GraphQL, authentication
+- `user` - Merge requests, issues, boards, workflows
+- `admin` - Installation, configuration, maintenance
+- `development` - Contributing, architecture, internals
+
+When to use GitLab Docs MCP:
+- Looking up GitLab CI/CD syntax and features
+- Researching GitLab API endpoints
+- Checking feature availability and tier requirements
+- Finding troubleshooting guides
+- Verifying current best practices
+
+Source: https://github.com/ozanmutlu/gitlab-docs-mcp
