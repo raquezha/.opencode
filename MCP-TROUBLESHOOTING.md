@@ -4,12 +4,14 @@
 
 | MCP | Status | Issue | Solution |
 |-----|--------|-------|----------|
-| **GitLab** | ✅ Working | Connection close (transient) | Server starts correctly, restart opencode |
+| **GitLab** | ✅ Working | None | Ready to use |
 | **GitLab Docs** | ✅ Working | None | Ready to use |
-| **GitHub** | ❌ Disabled | No Docker | Install Docker OR keep disabled |
+| **GitHub** | ✅ Working | None | Docker installed, ready to use |
 | **Brave Search** | ✅ Working | None | Ready to use |
 | **Context7** | ✅ Working | None | Ready to use |
 | **gh_grep** | ✅ Working | None | Ready to use |
+
+**Last Updated:** 2025-12-25 - Docker installed, all MCPs enabled
 
 ---
 
@@ -38,23 +40,14 @@ npx -y @zereight/mcp-gitlab
 
 ---
 
-### GitHub MCP - Solutions
+### GitHub MCP - WORKING ✅
 
-#### Option 1: Install Docker (Recommended)
+**Status:** Docker Desktop installed (version 29.1.3)
 
-**Why Docker?**
-- Official GitHub MCP uses Docker
-- Pre-built, tested, maintained by GitHub
-- No compilation needed
-
-**Install:**
-```bash
-# Download Docker Desktop
-open https://www.docker.com/products/docker-desktop
-
-# After installation, update opencode.json:
-# Rename: _github_disabled_no_docker → github
-```
+**Configuration:**
+- Docker image: `ghcr.io/github/github-mcp-server:latest`
+- Authentication: GitHub Personal Access Token
+- Status: Enabled and ready to use
 
 **Config after Docker install:**
 ```json
