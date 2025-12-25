@@ -42,8 +42,7 @@
       "type": "remote",
       "url": "https://mcp.grep.app"
     },
-    "_github_disabled_no_docker": {
-      "comment": "GitHub MCP requires Docker. Install Docker Desktop or use gh CLI instead.",
+    "github": {
       "type": "local",
       "command": ["docker", "run", "-i", "--rm", "-e", "GITHUB_PERSONAL_ACCESS_TOKEN", "ghcr.io/github/github-mcp-server"],
       "environment": {
