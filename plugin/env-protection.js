@@ -17,6 +17,8 @@ export const EnvProtection = async ({ project, client, $, directory, worktree })
     '.p12',           // Certificate files
     '.pfx',           // Certificate files
     'secret',         // Files with 'secret' in name
+    '.secrets/',      // Secrets folder
+    '.secrets\\',     // Secrets folder (Windows)
   ];
 
   return {

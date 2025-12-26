@@ -60,6 +60,21 @@
     "gitlab_docs": {
       "type": "local",
       "command": ["npx", "-y", "gitlab-docs-mcp"]
+    },
+    "jira": {
+      "type": "local",
+      "command": [
+        "docker", "run", "-i", "--rm",
+        "-e", "JIRA_URL",
+        "-e", "JIRA_USERNAME",
+        "-e", "JIRA_API_TOKEN",
+        "ghcr.io/sooperset/mcp-atlassian:latest"
+      ],
+      "environment": {
+        "JIRA_URL": "{file:.secrets/jira-url}",
+        "JIRA_USERNAME": "{file:.secrets/jira-username}",
+        "JIRA_API_TOKEN": "{file:.secrets/jira-api-token}"
+      }
     }
   }
 }
